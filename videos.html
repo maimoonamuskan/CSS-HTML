@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tourism Videos - Tourism Pakistan</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background:#f4f4f4;
+}
+
+.video-container{
+    max-width:1200px;
+    margin:100px auto 50px;
+    padding:20px;
+}
+
+.video-box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+video{
+    width:100%;
+    height:70vh;
+    border-radius:10px;
+    background:black;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.video-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+footer{
+    margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="index.html">
+    <a class="navbar-brand fw-bold" href="places.html"></a>
+Tourism Pakistan
+</a>
+</div>
+</nav>
+
+<div class="video-container">
+
+<div class="video-box">
+
+<h1 id="videoTitle">Tourism Pakistan Videos</h1>
+
+<div class="video-buttons">
+
+<button class="btn btn-success" onclick="playVideo('hunza.mp4','Hunza Valley')">Hunza</button>
+
+<button class="btn btn-success" onclick="playVideo('skardu.mp4','Skardu')">Skardu</button>
+
+<button class="btn btn-success" onclick="playVideo('swat.mp4','Swat Valley')">Swat</button>
+
+<button class="btn btn-success" onclick="playVideo('muree.mp4','Murree')">Murree</button>
+
+<button class="btn btn-success" onclick="playVideo('naran and kaghan.mp4','Naran & Kaghan')">Naran And Kaghan</button>
+
+<button class="btn btn-success" onclick="playVideo('neelum.mp4','Neelum Valley')">Neelum</button>
+
+<button class="btn btn-success" onclick="playVideo('kamrat.mp4','Kamrat Valley')">Kamrat</button>
+
+<button class="btn btn-success" onclick="playVideo('islamabad.mp4','Islamabad')">Islamabad</button>
+
+<button class="btn btn-success" onclick="playVideo('chitral and kalesh.mp4','Chitral And Kalash Valley')">Chitral And Kalash</button>
+
+</div>
+
+<video id="tourVideo" controls>
+    <source id="videoSource" src="videos/hunza.mp4" type="video/mp4">
+</video>
+
+<p class="text-center mt-3 fs-5">
+Explore the beauty of Pakistan through these amazing destinations.
+</p>
+
+<div class="text-center mt-4">
+<a href="places.html" class="btn btn-dark btn-lg">
+← Back to Places
+</a>
+</div>
+<video id="tourVideo" controls>
+    <source id="videoSource" src="videos/skardu.mp4" type="video/mp4">
+</video>
+
+<p class="text-center mt-3 fs-5">
+Explore the beauty of Pakistan through these amazing destinations.
+</p>
+
+<div class="text-center mt-4">
+<a href="places.html" class="btn btn-dark btn-lg">
+← Back to Places
+</a>
+</div>
+
+
+</div>
+
+</div>
+
+<footer class="bg-dark text-white text-center p-4">
+<p class="mb-0">
+© 2026 Tourism Pakistan | All Rights Reserved
+</p>
+</footer>
+
+<script>
+function playVideo(videoFile, title){
+
+document.getElementById("videoTitle").innerHTML = title;
+
+const video = document.getElementById("tourVideo");
+const source = document.getElementById("videoSource");
+
+source.src = "videos/" + videoFile;
+
+video.load();
+video.play();
+
+}
+</script>
+
+</body>
+</html>
